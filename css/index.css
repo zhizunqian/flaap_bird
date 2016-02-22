@@ -6,6 +6,7 @@ body{
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	display: block;
 	margin-top: -240px;
 	margin-left: -160px;
 	background: url(../image/1.jpg) no-repeat;

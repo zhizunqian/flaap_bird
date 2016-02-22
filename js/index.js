@@ -103,22 +103,6 @@ window.onload=function(){ "use strict";
 		bird.y -=20;
 		aa=1;
 	}
-
-
-
-
-
-	/*window.onresize = function(){
-		cw = document.documentElement.clientWidth;
-		ch = document.documentElement.clientHeight;
-		if(cw <= 320){
-			canvas.style.width = cw + 'px';
-		}
-		if(cw > 320){
-			canvas.style.width = 320 + 'px';
-		}
-	}*/
-	
 }
 
 
