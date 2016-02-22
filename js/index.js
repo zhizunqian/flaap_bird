@@ -30,15 +30,16 @@ window.onload=function(){ "use strict";
 		bottom:{x:500,y:300,w:70,h:500}
 	}
 	]
+
+
+	 canvas.addEventListener('click',function(e){
+    bird.y -= 20;
+  },false);
+  canvas.addEventListener('touchend',function(e){
+    bird.y -= 20;
+  },false);
 	//画小鸟
 	var aa=1;
-	var draw=function(){
-		ctx.clearRect(0,0,ww,hh);
-		aa+=0.05;
-		bird.y+=aa;
-		ctx.drawImage(tu,272,86,423,416,bird.x,bird.y,40,40);
-		//ctx.fillRect(bird.x,bird.y,bird.w,bird.h);
-		
 		/////// 检测矩形之间的碰撞
 		var recvsrec =  function(rect0,rect1){
 			if (rect0.x >= rect1.x && rect0.x >= rect1.x + rect1.w) {
@@ -52,6 +53,13 @@ window.onload=function(){ "use strict";
 			}
 			return true;
 		};
+	var draw=function(){
+		ctx.clearRect(0,0,ww,hh);
+		aa+=0.05;
+		bird.y+=aa;
+		ctx.drawImage(tu,272,86,423,416,bird.x,bird.y,40,40);
+		//ctx.fillRect(bird.x,bird.y,bird.w,bird.h);
+		
 		////////画管道
 		var a;
 		for(var i=0;i<guandaos.length;i++){
@@ -88,38 +96,29 @@ window.onload=function(){ "use strict";
 		else{
 			window.requestAnimationFrame(draw);
 		}
-
-	//r=requestAnimationFrame(draw);
-		// ctx.fillRect(guandao.x,guandao.y,guandao.w,guandao.h);
-		
 	}
 	r=requestAnimationFrame(draw);
-	document.onclick=function(){
-		bird.y-=20;
+
+	canvas.onclick = function(){
+		bird.y -=20;
 		aa=1;
 	}
 
 
 
 
-	var cw = document.documentElement.clientWidth;
-	var ch = document.documentElement.clientHeight;
-	if(cw <= 320){
-		canvas.style.width = cw + 'px';
-	}
-	window.onresize = function(){
+
+	/*window.onresize = function(){
 		cw = document.documentElement.clientWidth;
 		ch = document.documentElement.clientHeight;
 		if(cw <= 320){
 			canvas.style.width = cw + 'px';
 		}
-		if(cw > 480){
-			canvas.style.width = 480 + 'px';
+		if(cw > 320){
+			canvas.style.width = 320 + 'px';
 		}
-	}
-	canvas.addEventListener('touchend',function(e){
-		bird.y -= upspeed;
-		  },false);//在手机上有触摸版
+	}*/
+	
 }
 
 
