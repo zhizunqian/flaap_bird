@@ -30,6 +30,7 @@ window.onload=function(){ "use strict";
 		bottom:{x:500,y:300,w:70,h:500}
 	}
 	]
+	var kaishi=function(){
 
 
 	 canvas.addEventListener('click',function(e){
@@ -77,6 +78,7 @@ window.onload=function(){ "use strict";
 				a=true;
 			}
 			if(a){
+				alert("游戏失败！");
 				return;
 			}
 			if(d.top.x<=-d.top.w){
@@ -102,6 +104,11 @@ window.onload=function(){ "use strict";
 	canvas.onclick = function(){
 		bird.y -=20;
 		aa=1;
+	}
+	}
+	kaishibtn.onclick=function(){
+		this.style.display="none";
+		kaishi();
 	}
 }
 
